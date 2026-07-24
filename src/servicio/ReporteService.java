@@ -30,6 +30,7 @@ public class ReporteService {
 
 
         List<Activo> activos = activoDao.listar();
+        System.out.println("Activos encotrados:" +activos.size());
 
 
         double valorTotal = 0;
@@ -40,7 +41,9 @@ public class ReporteService {
         System.out.println("       REPORTE DE ACTIVOS");
         System.out.println("====================================");
 
-
+        if (activos.isEmpty()){
+            System.out.println("No existen activos registrados");
+        }
         for(Activo activo : activos){
 
 
@@ -63,11 +66,11 @@ public class ReporteService {
             System.out.println("Modelo: "
                     + activo.getModelo());
 
-            System.out.println("Valor: $"
-                    + activo.getValor());
+            System.out.printf("Valor: $%.2f%n"
+                    , activo.getValor());
 
-            System.out.println("Costo mantenimiento: $"
-                    + mantenimiento);
+            System.out.printf("Costo mantenimiento: $%.2f%n"
+                    , mantenimiento);
 
 
             System.out.println("------------------------------------");
@@ -78,6 +81,7 @@ public class ReporteService {
             costoMantenimientoTotal += mantenimiento;
 
         }
+        System.out.println("\n=============Resumen==========");
 
 
         System.out.println("\nTOTAL DE ACTIVOS: "

@@ -60,8 +60,10 @@ public class Consola {
                     break;
 
                 case 6:
-                    mostrarReporte();
-                    break;
+
+                    controller.mostrarReporte();
+
+                break;
 
                 case 7:
                     System.out.println("\nHasta pronto...");
@@ -280,11 +282,6 @@ public class Consola {
 
     }
 
-    private void mostrarReporte() {
-
-        System.out.println("\n========== REPORTE ==========");
-        System.out.println(controller.generarReporte());
-
-    }
+    
 
 }

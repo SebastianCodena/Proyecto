@@ -12,17 +12,20 @@ import java.util.List;
 import modelo.Activo;
 import interfaces.IActivoService;
 import servicio.ServicioMantenimiento;
+import servicio.ReporteService;
 
 public class ActivoController {
 
     private final IActivoService activoService;
     private final ServicioMantenimiento mantenimientoService;
+    private ReporteService reporteService;
 
     public ActivoController(IActivoService activoService,
                             ServicioMantenimiento mantenimientoService) {
 
         this.activoService = activoService;
         this.mantenimientoService = mantenimientoService;
+        reporteService = new ReporteService();
 
     }
 
@@ -63,11 +66,12 @@ public class ActivoController {
 
     }
 
-    public String generarReporte(){
+ 
+  
+    public void mostrarReporte(){
 
-        return mantenimientoService.generarReporte(
-                activoService.listar());
+    reporteService.generarReporte();
 
-    }
+}
 
 }
