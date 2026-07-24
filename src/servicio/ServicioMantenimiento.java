@@ -10,9 +10,9 @@ package servicio;
  */
 import java.util.List;
 import modelo.Activo;
-
-public class ServicioMantenimiento {
-
+import interfaces.IMantenimientoService;
+public class ServicioMantenimiento implements IMantenimientoService {
+@Override
     public double calcularCostoTotal(List<Activo> activos) {
 
         double total = 0;
