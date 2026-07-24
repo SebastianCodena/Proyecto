@@ -11,8 +11,8 @@ package test;
 import modelo.Hardware;
 import modelo.Licencia;
 import modelo.Periferico;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class ActivoTest {
 
@@ -33,7 +33,7 @@ public class ActivoTest {
         double resultado = hardware.calcularCostoMantenimiento();
 
 
-        assertEquals(120, resultado);
+        assertEquals(120, resultado,0);
 
     }
 
@@ -55,7 +55,7 @@ public class ActivoTest {
         double resultado = periferico.calcularCostoMantenimiento();
 
 
-        assertEquals(4, resultado);
+        assertEquals(4, resultado,0);
 
     }
 
@@ -77,7 +77,7 @@ public class ActivoTest {
         double resultado = licencia.calcularCostoMantenimiento();
 
 
-        assertEquals(8, resultado);
+        assertEquals(8, resultado,0);
 
     }
 

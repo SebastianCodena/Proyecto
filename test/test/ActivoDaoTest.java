@@ -12,10 +12,8 @@ package test;
  import dao.ActivoDao;
 import modelo.Hardware;
 import modelo.Activo;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class ActivoDaoTest {
 
