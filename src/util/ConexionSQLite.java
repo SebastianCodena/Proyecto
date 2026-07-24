@@ -16,11 +16,12 @@ import java.sql.SQLException;
 public class ConexionSQLite {
 
 
-    private static final String URL =
-            "jdbc:sqlite:db/LabInventario.db";
+     private static final String URL =
+            "jdbc:sqlite:basededatos/basededatos.db";
 
 
     public static Connection conectar() throws SQLException {
+
 
         Connection con = DriverManager.getConnection(URL);
 

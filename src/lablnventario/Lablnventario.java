@@ -8,13 +8,37 @@ package lablnventario;
  *
  * @author SebastianCodena
  */
+import controlador.ActivoController;
+import dao.ActivoDao;
+import interfaces.IRespositorio;
+import modelo.Activo;
+import servicio.ActivoService;
+import interfaces.IActivoService;
+import servicio.ServicioMantenimiento;
+import vista.Consola;
 public class Lablnventario {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Repositorio
+        IRespositorio<Activo> repositorio = new ActivoDao();
+
+        // Servicios
+        IActivoService activoService = new ActivoService(repositorio);
+        ServicioMantenimiento mantenimientoService = new ServicioMantenimiento();
+
+        // Controlador
+        ActivoController controller =
+                new ActivoController(activoService, mantenimientoService);
+
+        // Vista
+        Consola consola = new Consola(controller);
+
+        // Iniciar aplicación
+        consola.iniciar();
+
     }
-    
+
 }
