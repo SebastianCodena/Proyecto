@@ -14,6 +14,9 @@ import interfaces.IRespositorio;
 import modelo.Activo;
 import servicio.ActivoService;
 import interfaces.IActivoService;
+import interfaces.IMantenimientoService;
+import interfaces.IReporteService;
+import servicio.ReporteService;
 import servicio.ServicioMantenimiento;
 import vista.Consola;
 public class Lablnventario {
@@ -27,12 +30,20 @@ public class Lablnventario {
 
         // Servicios
         IActivoService activoService = new ActivoService(repositorio);
-        ServicioMantenimiento mantenimientoService = new ServicioMantenimiento();
+        IMantenimientoService mantenimientoService =
+        new ServicioMantenimiento();
 
         // Controlador
-        ActivoController controller =
-                new ActivoController(activoService, mantenimientoService);
 
+        IReporteService reporteService =
+        new ReporteService(repositorio);
+
+        ActivoController controller =
+        new ActivoController(
+                activoService,
+                mantenimientoService,
+                reporteService
+        );
         // Vista
         Consola consola = new Consola(controller);
 

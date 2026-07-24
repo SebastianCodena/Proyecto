@@ -8,7 +8,7 @@ package servicio;
  *
  * @author SebastianCodena
  */
-import dao.RepositorioActivo;
+
 import interfaces.IRespositorio;
 import interfaces.IActivoService;
 import java.util.List;
