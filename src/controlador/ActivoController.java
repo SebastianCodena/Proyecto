@@ -11,6 +11,7 @@ package controlador;
 import java.util.List;
 import modelo.Activo;
 import interfaces.IActivoService;
+import interfaces.IReporteService;
 import servicio.ServicioMantenimiento;
 import servicio.ReporteService;
 
@@ -18,14 +19,14 @@ public class ActivoController {
 
     private final IActivoService activoService;
     private final ServicioMantenimiento mantenimientoService;
-    private ReporteService reporteService;
+    private final IReporteService reporteService;
 
     public ActivoController(IActivoService activoService,
-                            ServicioMantenimiento mantenimientoService) {
+                            ServicioMantenimiento mantenimientoService,IReporteService reporteService) {
 
         this.activoService = activoService;
         this.mantenimientoService = mantenimientoService;
-        reporteService = new ReporteService();
+        this.reporteService = reporteService;
 
     }
 
