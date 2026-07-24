@@ -14,11 +14,11 @@ import modelo.Activo;
 import modelo.Hardware;
 import modelo.Periferico;
 import modelo.Licencia;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 import servicio.ServicioMantenimiento;
 import servicio.ServicioMantenimiento;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 
 public class ServicioMantenimientoTest {
@@ -76,7 +76,7 @@ public class ServicioMantenimientoTest {
 
 
 
-        assertEquals(132, resultado);
+        assertEquals(132.0, resultado,0.001);
 
     }
 
