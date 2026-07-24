@@ -8,28 +8,32 @@ package servicio;
  *
  * @author SebastianCodena
  */
-import dao.ActivoDao;
+
 import java.util.List;
 import modelo.Activo;
+import interfaces.IReporteService;
+import interfaces.IRespositorio;
 
 
-public class ReporteService {
+public class ReporteService implements IReporteService {
 
 
-    private ActivoDao activoDao;
+    private final IRespositorio <Activo> repositorio;
 
 
-    public ReporteService(){
-
-        activoDao = new ActivoDao();
+    public ReporteService(IRespositorio<Activo> repositorio){
+this.repositorio = repositorio;
+         
+        
+    
 
     }
 
-
+@Override
     public void generarReporte(){
 
 
-        List<Activo> activos = activoDao.listar();
+        List<Activo> activos = repositorio.listar();
         System.out.println("Activos encotrados:" +activos.size());
 
 
